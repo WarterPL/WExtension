@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WClasses;
 
 namespace Testing
 {
@@ -10,6 +11,10 @@ namespace Testing
     {
         static void Main(string[] args)
         {
+            string showme = WConsole.ReadString("nword? : ");
+            Console.WriteLine(showme);
+
+            Console.ReadLine();
         }
     }
 }
