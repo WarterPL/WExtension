@@ -11,8 +11,6 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            string showme = WConsole.ReadString("nword? : ");
-            Console.WriteLine(showme);
 
             Console.ReadLine();
         }

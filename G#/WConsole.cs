@@ -23,4 +23,40 @@ namespace WClasses
         public static void Recolor(ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
         { Console.ForegroundColor = foreground; Console.BackgroundColor = background; }
     }
+    public class W
+    {
+        public static bool IsEvenNumber(int x) => x % 2 == 0;
+        public static double Average(int[] array)
+        {
+            double avg = 0;
+            for(int i = 0; i < array.Length; i++)
+            {
+                avg += array[i];
+            }
+            avg /= array.Length;
+            return avg;
+        }
+        public static double Average(float[] array)
+        {
+            double avg = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                avg += array[i];
+            }
+            avg /= array.Length;
+            return avg;
+        }
+        public static double Average(double[] array)
+        {
+            double avg = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                avg += array[i];
+            }
+            avg /= array.Length;
+            return avg;
+        }
+
+
+    }
 }
