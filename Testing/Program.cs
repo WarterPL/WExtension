@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using W;
+using W.Games;
 
 namespace Testing
 {
@@ -11,14 +12,8 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            List<string> list = new List<string>();
-            list.Add("Bożydar");
-            list.Add("Bożydar");
-            list.Add("Bożydar");
-            list.Add("Bożydar");
-            list.Add("Bożydar");
-
-            list.Printer();
+            WTicTacToe ttt = new WTicTacToe();
+            ttt.StartGame();
             Console.ReadLine();
         }
         static void ArrayPrinterTest()
@@ -115,6 +110,15 @@ namespace Testing
             arg3.Printer();
             arg4.Printer();
             arg5.Printer();
+
+            List<string> list = new List<string>();
+            list.Add("Bożydar");
+            list.Add("Bożydar");
+            list.Add("Bożydar");
+            list.Add("Bożydar");
+            list.Add("Bożydar");
+
+            list.Printer();
         }
     }
 }
