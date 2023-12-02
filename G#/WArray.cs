@@ -71,6 +71,8 @@ namespace W
             return output;
         }
 
+
+        public static void Printer<T>(this List<T> lst) => lst.ToArray().Printer();
         public static void Printer<T>(this T[] array, string expand = null)
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;

@@ -11,7 +11,14 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            
+            List<string> list = new List<string>();
+            list.Add("Bożydar");
+            list.Add("Bożydar");
+            list.Add("Bożydar");
+            list.Add("Bożydar");
+            list.Add("Bożydar");
+
+            list.Printer();
             Console.ReadLine();
         }
         static void ArrayPrinterTest()
