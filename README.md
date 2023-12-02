@@ -1,1 +1,1 @@
-# Ułatwiam sobie życie na programowanie
+# Ułatwiam sobie życie
