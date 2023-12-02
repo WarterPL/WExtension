@@ -7,8 +7,8 @@
     <ProjectGuid>{936771B3-DAB4-4B7B-B8E4-099A6DB2A4F5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>G_</RootNamespace>
-    <AssemblyName>G#</AssemblyName>
+    <RootNamespace>W</RootNamespace>
+    <AssemblyName>WExtension</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

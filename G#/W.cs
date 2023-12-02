@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace WClasses
+namespace W
 {
     public class W
     {
