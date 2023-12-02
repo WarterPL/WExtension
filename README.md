@@ -1,1 +1,1 @@
-# G#
+# Ułatwiam sobie życie na programowanie
