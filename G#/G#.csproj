@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\ArrayHelp.cs" />
+    <Compile Include="WArray.cs" />
     <Compile Include="W.cs" />
     <Compile Include="WConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
