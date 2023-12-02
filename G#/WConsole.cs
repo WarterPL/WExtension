@@ -10,14 +10,8 @@ namespace W
 {
     public class WConsole
     {
-        public static string ReadString(string text = "")
+        public static string ReadLine(string text = "")
         { Console.Write(text); return Console.ReadLine(); }
-        public static float ReadFloat(string text = "")
-        { Console.Write(text); return float.Parse(Console.ReadLine()); }
-        public static double ReadDouble(string text = "")
-        { Console.Write(text); return double.Parse(Console.ReadLine()); }
-        public static int ReadInt(string text = "")
-        { Console.Write(text); return int.Parse(Console.ReadLine()); }
         
         public static void Write(string text, string end="\n") => Console.Write(text + end);
 

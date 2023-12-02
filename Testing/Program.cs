@@ -11,7 +11,12 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            int[] arg1 = { 1, 2, 3, 4, 5, 6};
+            
+            Console.ReadLine();
+        }
+        static void ArrayPrinterTest()
+        {
+            int[] arg1 = { 1, 2, 3, 4, 5, 6 };
             int[,] arg2 =
             {
                 { 1, 2, 3, 4, 5 },
@@ -103,7 +108,6 @@ namespace Testing
             arg3.Printer();
             arg4.Printer();
             arg5.Printer();
-            Console.ReadLine();
         }
     }
 }
