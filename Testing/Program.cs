@@ -12,7 +12,7 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            WTicTacToe ttt = new WTicTacToe();
+            WTicTacToe ttt = new WTicTacToe(false, true);
             ttt.StartGame();
             Console.ReadLine();
         }

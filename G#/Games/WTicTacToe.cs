@@ -10,6 +10,7 @@ namespace W.Games
     public class WTicTacToe
     { 
         public bool yourMove { get; private set; }
+        private bool experiment;
         private bool gamePlaying;
         private int winner = 0;
         public readonly int[,] checkSquere =
@@ -27,10 +28,11 @@ namespace W.Games
         private char pcChar = 'O';
         private char usrChar = 'X';
 
-        public WTicTacToe(bool urMove = true)
+        public WTicTacToe(bool urMove = true, bool isExperiment = false)
         {
             //┼ ─ │
             yourMove = urMove;
+            experiment = isExperiment;
         }
         public void StartGame()
         {
@@ -42,10 +44,13 @@ namespace W.Games
                 switch (yourMove)
                 {
                     case true:
-                        UserMove();
+                        if (!experiment)
+                            UserMove();
+                        else
+                            PCMove(1);
                         break;
                     case false:
-                        PCMove();
+                        PCMove(0);
                         break;
                 }
                 UpdateBoard();
@@ -56,7 +61,7 @@ namespace W.Games
                 }
             }
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-                var winText = winner == 1 ? "You won the game!" : "Computer won the game!";
+                var winText = winner == 1 ? "You won the game!" : winner == 2 ? "Computer won the game!" : "Game ended with draw";
             Console.WriteLine(winText);
             Console.ResetColor();
         }
@@ -83,7 +88,7 @@ namespace W.Games
             }
             WinCheck();
         }
-        private void PCMove()
+        private void PCMove(int n = 0)
         {
             Thread.Sleep(250);
             Random rnd = new Random();
@@ -93,7 +98,7 @@ namespace W.Games
 
             if (moved[y, x] != ' ')
                 goto tryMakeMove;
-            moved[y, x] = pcChar;
+            moved[y, x] = n == 0 ? pcChar : usrChar;
             WinCheck();
         }
         private void WinCheck()
@@ -116,7 +121,7 @@ namespace W.Games
                 tempPc[0, 2] + tempPc[1, 2] + tempPc[2, 2] == 15 ||
                 tempPc[0, 0] + tempPc[1, 1] + tempPc[2, 2] == 15 ||
                 tempPc[2, 0] + tempPc[1, 1] + tempPc[0, 2] == 15)
-                winner = 2;
+            { winner = 2; return; }
             else if (tempUsr[0, 0] + tempUsr[0, 1] + tempUsr[0, 2] == 15 ||
                 tempUsr[1, 0] + tempUsr[1, 1] + tempUsr[1, 2] == 15 ||
                 tempUsr[2, 0] + tempUsr[2, 1] + tempUsr[2, 2] == 15 ||
@@ -125,7 +130,14 @@ namespace W.Games
                 tempUsr[0, 2] + tempUsr[1, 2] + tempUsr[2, 2] == 15 ||
                 tempUsr[0, 0] + tempUsr[1, 1] + tempUsr[2, 2] == 15 ||
                 tempUsr[2, 0] + tempUsr[1, 1] + tempUsr[0, 2] == 15)
-                winner = 1;
+            { winner = 1; return; }
+            int k = 0;
+            foreach (var item in moved)
+            {
+                if (item == ' ')
+                    k++;
+            }
+            if( k == 0 ) { winner = 3; return; }
         }
         private void UpdateBoard()
         {
