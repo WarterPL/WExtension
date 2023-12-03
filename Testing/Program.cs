@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Timers;
 using System.Threading.Tasks;
 using W;
 using W.Games;
@@ -12,8 +13,7 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            WTicTacToe ttt = new WTicTacToe(false, true);
-            ttt.StartGame();
+            ArrayPrinterTest();
             Console.ReadLine();
         }
         static void ArrayPrinterTest()
@@ -105,11 +105,105 @@ namespace Testing
                     }
                 }
             };
+            int[,,,,,] arg6 =
+            {
+                {
+                    {
+                        {
+                            {
+                                {1,2,3,4,5}
+                            }
+                        }
+                    }
+                }
+            };
+            int[,,,,,,] arg7 =
+            {
+                {
+                    {
+                        {
+                            {
+                                {
+                                    {1,2,3,4,5}
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            int[,,,,,,,] arg8 =
+            {
+                {
+                    {
+                        {
+                            {
+                                {
+                                    {
+                                        {1,2,3,4,5}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            int[,,,,,,,,] arg9 =
+            {
+                {
+                    {
+                        {
+                            {
+                                {
+                                    {
+                                        {
+                                            {1,2,3,4,5}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            int[,,,,,,,,,] arg10 =
+            {
+                {
+                    {
+                        {
+                            {
+                                {
+                                    {
+                                        {
+                                            {
+                                                {1,2,3,4,5}
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    {
+                                        {
+                                            {
+                                                {6,7,8,9,10 }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
             arg1.Printer();
             arg2.Printer();
             arg3.Printer();
             arg4.Printer();
             arg5.Printer();
+            arg6.Printer();
+            arg7.Printer();
+            arg8.Printer();
+            arg9.Printer();
+            arg10.Printer();
 
             List<string> list = new List<string>();
             list.Add("Bożydar");
@@ -119,6 +213,11 @@ namespace Testing
             list.Add("Bożydar");
 
             list.Printer();
+        }
+        static void TTT(bool usrStart = true, bool experiment = false)
+        {
+            WTicTacToe ttt = new WTicTacToe(usrStart, experiment);
+            ttt.StartGame();
         }
     }
 }

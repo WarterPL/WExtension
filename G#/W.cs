@@ -7,19 +7,19 @@ namespace W
     {
         public static bool IsEvenNumber(int x) => x % 2 == 0;
 
-        public static double Average(int[] array)
+        public static double Average(params int[] array)
         {
             double avg = array.Sum();
             avg /= array.Length;
             return avg;
         }
-        public static double Average(float[] array)
+        public static double Average(params float[] array)
         {
             double avg = array.Sum();
             avg /= array.Length;
             return avg;
         }
-        public static double Average(double[] array)
+        public static double Average(params double[] array)
         {
             double avg = array.Sum();
             avg /= array.Length;
