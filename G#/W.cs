@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace W
 {
-    public class W
+    public static class W
     {
         public static bool IsEvenNumber(int x) => x % 2 == 0;
 

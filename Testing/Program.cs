@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Timers;
-using System.Threading.Tasks;
-using W;
+﻿using W;
 using W.Games;
 
 namespace Testing
@@ -13,8 +7,13 @@ namespace Testing
     {
         static void Main(string[] args)
         {
+            //WConsole.WriteLine("Wale cie", ConsoleColor.DarkRed);
+            //Console.WriteLine("XD");
+            WConsole.RainbowWrite(end:"#######################################################", text:"x");
+            WConsole.WriteLine();
+
             ArrayPrinterTest();
-            Console.ReadLine();
+            WConsole.ReadLine();
         }
         static void ArrayPrinterTest()
         {
@@ -194,25 +193,103 @@ namespace Testing
                     }
                 }
             };
-            arg1.Printer();
-            arg2.Printer();
-            arg3.Printer();
-            arg4.Printer();
-            arg5.Printer();
-            arg6.Printer();
-            arg7.Printer();
-            arg8.Printer();
-            arg9.Printer();
-            arg10.Printer();
+            int[,,,,,,,,,,] arg11 =
+            {
+                {
+                    {
+                        {
+                            {
+                                {
+                                    {
+                                        {
+                                            {
+                                                {
+                                                    {1,2,3,4,5}
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    {
+                                        {
+                                            {
+                                                {
+                                                    {6,7,8,9,10 }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            int[,,,,,,,,,,,] arg12 =
+            {
+                {
+                    {
+                        {
+                            {
+                                {
+                                    {
+                                        {
+                                            {
+                                                {
+                                                    {
+                                                        {1,2,3,4,5}
+                                                    },
+                                                    {
+                                                        {6,7,8,9,10}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    {
+                                        {
+                                            {
+                                                {
+                                                    {
+                                                        {11,12,13,14,15 }
+                                                    },
+                                                    {
+                                                        {16,17,18,19,20 }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            /*arg1.Print();
+            arg2.Print();
+            arg3.Print();
+            arg4.Print();
+            arg5.Print();
+            arg6.Print();
+            arg7.Print();
+            arg8.Print();
+            arg9.Print();
+            arg10.Print();
+            arg11.Print();*/
+            arg12.Print();
 
-            List<string> list = new List<string>();
+            /*List<string> list = new List<string>();
             list.Add("Bożydar");
             list.Add("Bożydar");
             list.Add("Bożydar");
             list.Add("Bożydar");
             list.Add("Bożydar");
 
-            list.Printer();
+            list.Print();*/
         }
         static void TTT(bool usrStart = true, bool experiment = false)
         {
