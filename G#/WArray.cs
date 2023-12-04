@@ -565,5 +565,143 @@ namespace W
             if (expand == null)
                 Console.ResetColor();
         }
+
+        public static int[] Generate(this int[] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                array[i] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static int[,] Generate(this int[,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for(int j = 0; j < array.GetLength(1); j++)
+                    array[i, j] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static int[,,] Generate(this int[,,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    for (int k = 0; k < array.GetLength(2); k++)
+                        array[i, j, k] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static int[,,,] Generate(this int[,,,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    for (int k = 0; k < array.GetLength(2); k++)
+                        for (int l = 0; l < array.GetLength(3); l++)
+                            array[i, j, k, l] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static int[,,,,] Generate(this int[,,,,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    for (int k = 0; k < array.GetLength(2); k++)
+                        for (int l = 0; l < array.GetLength(3); l++)
+                            for(int m = 0; m < array.GetLength(4); m++)
+                                array[i, j, k, l, m] = rnd.Next(min, max + 1);
+            return array;
+        }
+        
+        public static float[] Generate(this float[] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                array[i] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static float[,] Generate(this float[,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    array[i, j] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static float[,,] Generate(this float[,,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    for (int k = 0; k < array.GetLength(2); k++)
+                        array[i, j, k] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static float[,,,] Generate(this float[,,,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    for (int k = 0; k < array.GetLength(2); k++)
+                        for (int l = 0; l < array.GetLength(3); l++)
+                            array[i, j, k, l] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static float[,,,,] Generate(this float[,,,,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    for (int k = 0; k < array.GetLength(2); k++)
+                        for (int l = 0; l < array.GetLength(3); l++)
+                            for (int m = 0; m < array.GetLength(4); m++)
+                                array[i, j, k, l, m] = rnd.Next(min, max + 1);
+            return array;
+        }
+
+        public static double[] Generate(this double[] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                array[i] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static double[,] Generate(this double[,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    array[i, j] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static double[,,] Generate(this double[,,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    for (int k = 0; k < array.GetLength(2); k++)
+                        array[i, j, k] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static double[,,,] Generate(this double[,,,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    for (int k = 0; k < array.GetLength(2); k++)
+                        for (int l = 0; l < array.GetLength(3); l++)
+                            array[i, j, k, l] = rnd.Next(min, max + 1);
+            return array;
+        }
+        public static double[,,,,] Generate(this double[,,,,] array, int min, int max)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.GetLength(0); i++)
+                for (int j = 0; j < array.GetLength(1); j++)
+                    for (int k = 0; k < array.GetLength(2); k++)
+                        for (int l = 0; l < array.GetLength(3); l++)
+                            for (int m = 0; m < array.GetLength(4); m++)
+                                array[i, j, k, l, m] = rnd.Next(min, max + 1);
+            return array;
+        }
     }
 }

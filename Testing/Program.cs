@@ -9,10 +9,13 @@ namespace Testing
         {
             //WConsole.WriteLine("Wale cie", ConsoleColor.DarkRed);
             //Console.WriteLine("XD");
-            WConsole.RainbowWrite(end:"#######################################################", text:"x");
-            WConsole.WriteLine();
+            //WConsole.RainbowWrite("#######################################################");
+            //WConsole.WriteLine();
+            int[,,] k = new int[64, 8, 8];
+            k.Generate(0, 30);
+            k.Print();
 
-            ArrayPrinterTest();
+            //ArrayPrinterTest();
             WConsole.ReadLine();
         }
         static void ArrayPrinterTest()
