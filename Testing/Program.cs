@@ -7,15 +7,10 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            //WConsole.WriteLine("Wale cie", ConsoleColor.DarkRed);
-            //Console.WriteLine("XD");
-            //WConsole.RainbowWrite("#######################################################");
-            //WConsole.WriteLine();
-            int[,,] k = new int[64, 8, 8];
+            int[,,] k = new int[5, 8, 8];
             k.Generate(0, 30);
-            k.Print();
+            k.Print(SecondDimMode.Box);
 
-            //ArrayPrinterTest();
             WConsole.ReadLine();
         }
         static void ArrayPrinterTest()

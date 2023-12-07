@@ -13,8 +13,8 @@ namespace W
 {
     public static class WConsole
     { 
-        static ConsoleColor colorB = ConsoleColor.Black;
-        static ConsoleColor colorF = ConsoleColor.White;
+        public static ConsoleColor colorB { get; private set; } = ConsoleColor.Black;
+        public static ConsoleColor colorF { get; private set; } = ConsoleColor.White;
 
         public static string ReadLine(string text = "",
             ConsoleColor foreground = ConsoleColor.White,
@@ -75,5 +75,10 @@ namespace W
         { Console.ForegroundColor = foreground; Console.BackgroundColor = background; }
         private static void unRecolor()
         {  Console.ForegroundColor = colorF; Console.BackgroundColor = colorB; }
+        internal static void SetColors()
+        {
+            colorB = Console.BackgroundColor;
+            colorF = Console.ForegroundColor;
+        }
     }
 }

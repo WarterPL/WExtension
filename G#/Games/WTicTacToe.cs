@@ -36,6 +36,10 @@ namespace W.Games
         }
         public void StartGame()
         {
+            for (int i = 0; i < moved.GetLength(0); i++)
+                for (int j = 0; j < moved.GetLength(1); j++)
+                    moved[i, j] = ' ';
+
             gamePlaying = true;
 
             UpdateBoard();

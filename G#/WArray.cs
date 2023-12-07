@@ -10,7 +10,8 @@ namespace W
 {
     public static class WArray
     {
-        /*2D>1D*/public static T[] Extract<T>(this T[,] array, int index)
+        /*2D>1D*/
+        public static T[] Extract<T>(this T[,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             T[] output = new T[_1stDimLength];
@@ -22,7 +23,8 @@ namespace W
 
             return output;
         }
-        /*3D>2D*/public static T[,] Extract<T>(this T[,,] array, int index)
+        /*3D>2D*/
+        public static T[,] Extract<T>(this T[,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
@@ -37,7 +39,8 @@ namespace W
             }
             return output;
         }
-        /*4D>3D*/public static T[,,] Extract<T>(this T[,,,] array, int index)
+        /*4D>3D*/
+        public static T[,,] Extract<T>(this T[,,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
@@ -56,7 +59,8 @@ namespace W
             }
             return output;
         }
-        /*5D>4D*/public static T[,,,] Extract<T>(this T[,,,,] array, int index)
+        /*5D>4D*/
+        public static T[,,,] Extract<T>(this T[,,,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
@@ -72,25 +76,27 @@ namespace W
 
             return output;
         }
-        /*6D>5D*/public static T[,,,,] Extract<T>(this T[,,,,,] array, int index)
+        /*6D>5D*/
+        public static T[,,,,] Extract<T>(this T[,,,,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
             int _3ndDimLength = array.GetLength(3);
             int _4thDimLength = array.GetLength(4);
             int _5thDimLength = array.GetLength(5);
-            T[,,,,] output = new T[_1stDimLength, _2ndDimLength, _3ndDimLength, _4thDimLength,_5thDimLength];
+            T[,,,,] output = new T[_1stDimLength, _2ndDimLength, _3ndDimLength, _4thDimLength, _5thDimLength];
 
             for (int i = 0; i < _1stDimLength; i++)
                 for (int j = 0; j < _2ndDimLength; j++)
                     for (int k = 0; k < _3ndDimLength; k++)
                         for (int l = 0; l < _4thDimLength; l++)
                             for (int m = 0; m < _5thDimLength; m++)
-                            output[i, j, k, l, m] = array[index, i, j, k, l, m];
+                                output[i, j, k, l, m] = array[index, i, j, k, l, m];
 
             return output;
         }
-        /*7D>6D*/public static T[,,,,,] Extract<T>(this T[,,,,,,] array, int index)
+        /*7D>6D*/
+        public static T[,,,,,] Extract<T>(this T[,,,,,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
@@ -110,7 +116,8 @@ namespace W
 
             return output;
         }
-        /*8D>7D*/public static T[,,,,,,] Extract<T>(this T[,,,,,,,] array, int index)
+        /*8D>7D*/
+        public static T[,,,,,,] Extract<T>(this T[,,,,,,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
@@ -119,7 +126,7 @@ namespace W
             int _5thDimLength = array.GetLength(5);
             int _6thDimLength = array.GetLength(6);
             int _7thDimLength = array.GetLength(7);
-            T[,,,,,,] output = new T[_1stDimLength, _2ndDimLength, _3ndDimLength, _4thDimLength, _5thDimLength, _6thDimLength, 
+            T[,,,,,,] output = new T[_1stDimLength, _2ndDimLength, _3ndDimLength, _4thDimLength, _5thDimLength, _6thDimLength,
                 _7thDimLength];
 
             for (int i = 0; i < _1stDimLength; i++)
@@ -133,7 +140,8 @@ namespace W
 
             return output;
         }
-        /*9D>8D*/public static T[,,,,,,,] Extract<T>(this T[,,,,,,,,] array, int index)
+        /*9D>8D*/
+        public static T[,,,,,,,] Extract<T>(this T[,,,,,,,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
@@ -152,13 +160,14 @@ namespace W
                         for (int l = 0; l < _4thDimLength; l++)
                             for (int m = 0; m < _5thDimLength; m++)
                                 for (int n = 0; n < _6thDimLength; n++)
-                                for (int o = 0; o < _7thDimLength; o++)
-                                for (int p = 0; p < _8thDimLength; p++)
-                                    output[i, j, k, l, m, n, o, p] = array[index, i, j, k, l, m, n, o, p];
+                                    for (int o = 0; o < _7thDimLength; o++)
+                                        for (int p = 0; p < _8thDimLength; p++)
+                                            output[i, j, k, l, m, n, o, p] = array[index, i, j, k, l, m, n, o, p];
 
             return output;
         }
-        /*10D>9D*/public static T[,,,,,,,,] Extract<T>(this T[,,,,,,,,,] array, int index)
+        /*10D>9D*/
+        public static T[,,,,,,,,] Extract<T>(this T[,,,,,,,,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
@@ -181,11 +190,12 @@ namespace W
                                     for (int o = 0; o < _7thDimLength; o++)
                                         for (int p = 0; p < _8thDimLength; p++)
                                             for (int q = 0; q < _9thDimLength; q++)
-                                            output[i, j, k, l, m, n, o, p, q] = array[index, i, j, k, l, m, n, o, p, q];
+                                                output[i, j, k, l, m, n, o, p, q] = array[index, i, j, k, l, m, n, o, p, q];
 
             return output;
         }
-        /*11D>10D*/public static T[,,,,,,,,,] Extract<T>(this T[,,,,,,,,,,] array, int index)
+        /*11D>10D*/
+        public static T[,,,,,,,,,] Extract<T>(this T[,,,,,,,,,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
@@ -209,12 +219,13 @@ namespace W
                                     for (int o = 0; o < _7thDimLength; o++)
                                         for (int p = 0; p < _8thDimLength; p++)
                                             for (int q = 0; q < _9thDimLength; q++)
-                                                for(int r = 0; r < _10thDimLength; r++)
-                                            output[i, j, k, l, m, n, o, p, q, r] = array[index, i, j, k, l, m, n, o, p, q, r];
+                                                for (int r = 0; r < _10thDimLength; r++)
+                                                    output[i, j, k, l, m, n, o, p, q, r] = array[index, i, j, k, l, m, n, o, p, q, r];
 
             return output;
         }
-        /*12D>11D*/public static T[,,,,,,,,,,] Extract<T>(this T[,,,,,,,,,,,] array, int index)
+        /*12D>11D*/
+        public static T[,,,,,,,,,,] Extract<T>(this T[,,,,,,,,,,,] array, int index)
         {
             int _1stDimLength = array.GetLength(1);
             int _2ndDimLength = array.GetLength(2);
@@ -239,15 +250,16 @@ namespace W
                                     for (int o = 0; o < _7thDimLength; o++)
                                         for (int p = 0; p < _8thDimLength; p++)
                                             for (int q = 0; q < _9thDimLength; q++)
-                                                for(int r = 0; r < _10thDimLength; r++)
-                                                    for(int s = 0;  s < _11thDimLength; s++)
-                                            output[i, j, k, l, m, n, o, p, q, r, s] = array[index, i, j, k, l, m, n, o, p, q, r, s];
+                                                for (int r = 0; r < _10thDimLength; r++)
+                                                    for (int s = 0; s < _11thDimLength; s++)
+                                                        output[i, j, k, l, m, n, o, p, q, r, s] = array[index, i, j, k, l, m, n, o, p, q, r, s];
 
             return output;
         }
 
         public static void Print<T>(this List<T> lst) => lst.ToArray().Print();
-        /*1D*/public static void Print<T>(this T[] array, string expand = null)
+        /*1D*/
+        public static void Print<T>(this T[] array, string expand = null)
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
             for (int i = 0; i < array.Length; i++)
@@ -269,33 +281,64 @@ namespace W
             if (expand == null)
                 Console.ResetColor();
         }
-        /*2D*/public static void Print<T>(this T[,] array, string expand = null)
+        /*2D*/
+        public static void Print<T>(this T[,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            for (int i = 0; i < array.GetLength(0); i++)
+            if (sdm == SecondDimMode.List)
             {
-                bool lastRow = i == array.GetLength(0) - 1;
-                var isLastRow = lastRow ? "└── " : "├── ";
-                var rowDisplay = i == 0 ? (expand == null ? "┌── " : "├── ") : isLastRow;
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    bool lastRow = i == array.GetLength(0) - 1;
+                    var isLastRow = lastRow ? "└── " : "├── ";
+                    var rowDisplay = i == 0 ? (expand == null ? "┌── " : "├── ") : isLastRow;
 
-                if (expand == null && array.GetLength(0) <= 1)
-                    rowDisplay = lastRow ? "─── " : rowDisplay;
-                else
-                    rowDisplay = lastRow ? isLastRow : rowDisplay;
+                    if (expand == null && array.GetLength(0) <= 1)
+                        rowDisplay = lastRow ? "─── " : rowDisplay;
+                    else
+                        rowDisplay = lastRow ? isLastRow : rowDisplay;
 
-                Console.Write($"{expand}{rowDisplay}");
+                    Console.Write($"{expand}{rowDisplay}");
 
-                WConsole.WriteLine($"Row number {i}", ConsoleColor.DarkBlue);
-                Console.ForegroundColor = ConsoleColor.DarkGray;
+                    WConsole.WriteLine($"Row number {i}", ConsoleColor.DarkBlue);
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
 
-                var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                var _1Dim = array.Extract(i);
-                _1Dim.Print(expand + expander);
+                    var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
+                    var _1Dim = array.Extract(i);
+                    _1Dim.Print(expand + expander);
+                }
             }
+            if(sdm == SecondDimMode.Box)
+            {
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    bool lastRow = i == array.GetLength(0) - 1;
+                    var isLastRow = lastRow ? "└── " : "├── ";
+                    var rowDisplay = i == 0 ? (expand == null ? "┌── " : "├── ") : isLastRow;
+
+                    if (expand == null && array.GetLength(0) <= 1)
+                        rowDisplay = lastRow ? "─── " : rowDisplay;
+                    else
+                        rowDisplay = lastRow ? isLastRow : rowDisplay;
+
+                    Console.Write($"{expand}{rowDisplay}");
+
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        WConsole.Write($"<", ConsoleColor.DarkBlue);
+                        WConsole.Write($"{array[i, j]}", ConsoleColor.DarkMagenta);
+                        WConsole.Write($">\t", ConsoleColor.DarkBlue);
+                    }
+
+                    Console.WriteLine();
+                }
+            }
+
             if (expand == null)
                 Console.ResetColor();
         }
-        /*3D*/public static void Print<T>(this T[,,] array, string expand = null)
+        /*3D*/
+        public static void Print<T>(this T[,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -317,12 +360,13 @@ namespace W
                 var _2Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _2Dim.Print(expand + expander);
+                _2Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
         }
-        /*4D*/public static void Print<T>(this T[,,,] array, string expand = null)
+        /*4D*/
+        public static void Print<T>(this T[,,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -344,12 +388,13 @@ namespace W
                 var _3Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _3Dim.Print(expand + expander);
+                _3Dim.Print(sdm,expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
         }
-        /*5D*/public static void Print<T>(this T[,,,,] array, string expand = null)
+        /*5D*/
+        public static void Print<T>(this T[,,,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -371,12 +416,13 @@ namespace W
                 var _4Dim = array.Extract(i);
 
                 var expander = lastRow ? "    " : "│   ";
-                _4Dim.Print(expand + expander);
+                _4Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
         }
-        /*6D*/public static void Print<T>(this T[,,,,,] array, string expand = null)
+        /*6D*/
+        public static void Print<T>(this T[,,,,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -398,12 +444,13 @@ namespace W
                 var _5Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _5Dim.Print(expand + expander);
+                _5Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
         }
-        /*7D*/public static void Print<T>(this T[,,,,,,] array, string expand = null)
+        /*7D*/
+        public static void Print<T>(this T[,,,,,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -425,12 +472,13 @@ namespace W
                 var _6Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _6Dim.Print(expand + expander);
+                _6Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
         }
-        /*8D*/public static void Print<T>(this T[,,,,,,,] array, string expand = null)
+        /*8D*/
+        public static void Print<T>(this T[,,,,,,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -452,12 +500,13 @@ namespace W
                 var _7Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _7Dim.Print(expand + expander);
+                _7Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
         }
-        /*9D*/public static void Print<T>(this T[,,,,,,,,] array, string expand = null)
+        /*9D*/
+        public static void Print<T>(this T[,,,,,,,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -479,12 +528,13 @@ namespace W
                 var _8Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _8Dim.Print(expand + expander);
+                _8Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
         }
-        /*10D*/public static void Print<T>(this T[,,,,,,,,,] array, string expand = null)
+        /*10D*/
+        public static void Print<T>(this T[,,,,,,,,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -506,12 +556,13 @@ namespace W
                 var _9Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _9Dim.Print(expand + expander);
+                _9Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
         }
-        /*11D*/public static void Print<T>(this T[,,,,,,,,,,] array, string expand = null)
+        /*11D*/
+        public static void Print<T>(this T[,,,,,,,,,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -533,12 +584,13 @@ namespace W
                 var _10Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _10Dim.Print(expand + expander);
+                _10Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
         }
-        /*12D*/public static void Print<T>(this T[,,,,,,,,,,,] array, string expand = null)
+        /*12D*/
+        public static void Print<T>(this T[,,,,,,,,,,,] array, SecondDimMode sdm = SecondDimMode.List, string expand = null)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -560,7 +612,7 @@ namespace W
                 var _11Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _11Dim.Print(expand + expander);
+                _11Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
@@ -577,7 +629,7 @@ namespace W
         {
             Random rnd = new Random();
             for (int i = 0; i < array.GetLength(0); i++)
-                for(int j = 0; j < array.GetLength(1); j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                     array[i, j] = rnd.Next(min, max + 1);
             return array;
         }
@@ -607,11 +659,11 @@ namespace W
                 for (int j = 0; j < array.GetLength(1); j++)
                     for (int k = 0; k < array.GetLength(2); k++)
                         for (int l = 0; l < array.GetLength(3); l++)
-                            for(int m = 0; m < array.GetLength(4); m++)
+                            for (int m = 0; m < array.GetLength(4); m++)
                                 array[i, j, k, l, m] = rnd.Next(min, max + 1);
             return array;
         }
-        
+
         public static float[] Generate(this float[] array, int min, int max)
         {
             Random rnd = new Random();
@@ -703,5 +755,10 @@ namespace W
                                 array[i, j, k, l, m] = rnd.Next(min, max + 1);
             return array;
         }
+    }
+    public enum SecondDimMode
+    {
+        List,
+        Box
     }
 }
