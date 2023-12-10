@@ -1,4 +1,5 @@
-﻿using W;
+﻿using System;
+using W;
 using W.Games;
 
 namespace Testing
@@ -7,10 +8,23 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            int[,,] k = new int[5, 8, 8];
-            k.Generate(0, 30);
-            k.Print(SecondDimMode.Box);
-
+            double[,,,] ka = new double[3, 2, 4, 4];
+            ka.Generate(0, 10);
+            /*Random rnd = new Random();
+            for(int i = 0; i < 3; i++)
+            {
+                for(int j = 0; j < 2; j++)
+                {
+                    for(int k = 0; k < 4; k++)
+                    {
+                        for(int l = 0; l < 4; l++)
+                        {
+                            ka[i,j,k,l] = rnd.Next(1, 10);
+                        }
+                    }
+                }
+            }*/
+            ka.Print(SecondDimMode.Box);
             WConsole.ReadLine();
         }
         static void ArrayPrinterTest()

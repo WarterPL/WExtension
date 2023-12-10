@@ -308,7 +308,7 @@ namespace W
                     _1Dim.Print(expand + expander);
                 }
             }
-            if(sdm == SecondDimMode.Box)
+            if (sdm == SecondDimMode.Box)
             {
                 for (int i = 0; i < array.GetLength(0); i++)
                 {
@@ -325,9 +325,9 @@ namespace W
 
                     for (int j = 0; j < array.GetLength(1); j++)
                     {
-                        WConsole.Write($"<", ConsoleColor.DarkBlue);
+                        WConsole.Write($"\t<", ConsoleColor.DarkBlue);
                         WConsole.Write($"{array[i, j]}", ConsoleColor.DarkMagenta);
-                        WConsole.Write($">\t", ConsoleColor.DarkBlue);
+                        WConsole.Write($">", ConsoleColor.DarkBlue);
                     }
 
                     Console.WriteLine();
@@ -388,7 +388,7 @@ namespace W
                 var _3Dim = array.Extract(i);
 
                 var expander = i == array.GetLength(0) - 1 ? "    " : "│   ";
-                _3Dim.Print(sdm,expand + expander);
+                _3Dim.Print(sdm, expand + expander);
             }
             if (expand == null)
                 Console.ResetColor();
