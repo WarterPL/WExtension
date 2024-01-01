@@ -8,25 +8,12 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            double[,,,] ka = new double[3, 2, 4, 4];
-            ka.Generate(0, 10);
-            /*Random rnd = new Random();
-            for(int i = 0; i < 3; i++)
-            {
-                for(int j = 0; j < 2; j++)
-                {
-                    for(int k = 0; k < 4; k++)
-                    {
-                        for(int l = 0; l < 4; l++)
-                        {
-                            ka[i,j,k,l] = rnd.Next(1, 10);
-                        }
-                    }
-                }
-            }*/
-            ka.Print(SecondDimMode.Box);
+            double[,] ka = new double[10, 20];
+            ka.Generate(0, 9, GenerateMode.FloatingPoint);
+            ka.Print(SecondDimMode.List);
             WConsole.ReadLine();
         }
+
         static void ArrayPrinterTest()
         {
             int[] arg1 = { 1, 2, 3, 4, 5, 6 };

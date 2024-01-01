@@ -308,7 +308,7 @@ namespace W
                     _1Dim.Print(expand + expander);
                 }
             }
-            if (sdm == SecondDimMode.Box)
+            if (sdm == SecondDimMode.Box || sdm == SecondDimMode.Plain)
             {
                 for (int i = 0; i < array.GetLength(0); i++)
                 {
@@ -322,13 +322,18 @@ namespace W
                         rowDisplay = lastRow ? isLastRow : rowDisplay;
 
                     Console.Write($"{expand}{rowDisplay}");
-
-                    for (int j = 0; j < array.GetLength(1); j++)
-                    {
-                        WConsole.Write($"\t<", ConsoleColor.DarkBlue);
-                        WConsole.Write($"{array[i, j]}", ConsoleColor.DarkMagenta);
-                        WConsole.Write($">", ConsoleColor.DarkBlue);
-                    }
+                    if(sdm == SecondDimMode.Box)
+                        for (int j = 0; j < array.GetLength(1); j++)
+                        {
+                            WConsole.Write($"\t<", ConsoleColor.DarkBlue);
+                            WConsole.Write($"{array[i, j]}", ConsoleColor.DarkMagenta);
+                            WConsole.Write($">", ConsoleColor.DarkBlue);
+                        }
+                    if(sdm == SecondDimMode.Plain)
+                        for (int j = 0; j < array.GetLength(1); j++)
+                        {
+                            WConsole.Write($"{array[i, j]}", ConsoleColor.White);
+                        }
 
                     Console.WriteLine();
                 }
@@ -664,101 +669,157 @@ namespace W
             return array;
         }
 
-        public static float[] Generate(this float[] array, int min, int max)
+        public static float[] Generate(this float[] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
-                array[i] = rnd.Next(min, max + 1);
+            {
+                array[i] = gm == GenerateMode.Integer ?
+                    rnd.Next(min, max)
+                    :
+                    (float)rnd.NextDouble(min, max);
+            }
             return array;
         }
-        public static float[,] Generate(this float[,] array, int min, int max)
+        public static float[,] Generate(this float[,] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
-                    array[i, j] = rnd.Next(min, max + 1);
+                {
+                    array[i, j] = gm == GenerateMode.Integer ?
+                        rnd.Next(min, max)
+                        :
+                        (float)rnd.NextDouble(min, max);
+                }
             return array;
         }
-        public static float[,,] Generate(this float[,,] array, int min, int max)
+        public static float[,,] Generate(this float[,,] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
                     for (int k = 0; k < array.GetLength(2); k++)
-                        array[i, j, k] = rnd.Next(min, max + 1);
+                    {
+                        array[i, j, k] = gm == GenerateMode.Integer ?
+                            rnd.Next(min, max)
+                            :
+                            (float)rnd.NextDouble(min, max);
+                    }
             return array;
         }
-        public static float[,,,] Generate(this float[,,,] array, int min, int max)
+        public static float[,,,] Generate(this float[,,,] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
                     for (int k = 0; k < array.GetLength(2); k++)
                         for (int l = 0; l < array.GetLength(3); l++)
-                            array[i, j, k, l] = rnd.Next(min, max + 1);
+                        {
+                            array[i, j, k, l] = gm == GenerateMode.Integer ?
+                                rnd.Next(min, max)
+                                :
+                                (float)rnd.NextDouble(min, max);
+                        }
             return array;
         }
-        public static float[,,,,] Generate(this float[,,,,] array, int min, int max)
+        public static float[,,,,] Generate(this float[,,,,] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
                     for (int k = 0; k < array.GetLength(2); k++)
                         for (int l = 0; l < array.GetLength(3); l++)
                             for (int m = 0; m < array.GetLength(4); m++)
-                                array[i, j, k, l, m] = rnd.Next(min, max + 1);
+                            {
+                                array[i, j, k, l, m] = gm == GenerateMode.Integer ?
+                                    rnd.Next(min, max)
+                                    :
+                                    (float)rnd.NextDouble(min, max);
+                            }
             return array;
         }
 
-        public static double[] Generate(this double[] array, int min, int max)
+        public static double[] Generate(this double[] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
-                array[i] = rnd.Next(min, max + 1);
+            {
+                array[i] = gm == GenerateMode.Integer ?
+                    rnd.Next(min, max)
+                    :
+                    rnd.NextDouble(min, max);
+            }
             return array;
         }
-        public static double[,] Generate(this double[,] array, int min, int max)
+        public static double[,] Generate(this double[,] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
-                    array[i, j] = rnd.Next(min, max + 1);
+                {
+                    array[i, j] = gm == GenerateMode.Integer ?
+                        rnd.Next(min, max)
+                        :
+                        rnd.NextDouble(min, max);
+                }
             return array;
         }
-        public static double[,,] Generate(this double[,,] array, int min, int max)
+        public static double[,,] Generate(this double[,,] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
                     for (int k = 0; k < array.GetLength(2); k++)
-                        array[i, j, k] = rnd.Next(min, max + 1);
+                    {
+                        array[i, j, k] = gm == GenerateMode.Integer ?
+                            rnd.Next(min, max)
+                            :
+                            rnd.NextDouble(min, max);
+                    }
             return array;
         }
-        public static double[,,,] Generate(this double[,,,] array, int min, int max)
+        public static double[,,,] Generate(this double[,,,] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
                     for (int k = 0; k < array.GetLength(2); k++)
                         for (int l = 0; l < array.GetLength(3); l++)
-                            array[i, j, k, l] = rnd.Next(min, max + 1);
+                        {
+                            array[i, j, k, l] = gm == GenerateMode.Integer ?
+                                rnd.Next(min, max)
+                                :
+                                rnd.NextDouble(min, max);
+                        }
             return array;
         }
-        public static double[,,,,] Generate(this double[,,,,] array, int min, int max)
+        public static double[,,,,] Generate(this double[,,,,] array, int min, int max, GenerateMode gm = GenerateMode.FloatingPoint)
         {
-            Random rnd = new Random();
+            WRandom rnd = new WRandom();
             for (int i = 0; i < array.GetLength(0); i++)
                 for (int j = 0; j < array.GetLength(1); j++)
                     for (int k = 0; k < array.GetLength(2); k++)
                         for (int l = 0; l < array.GetLength(3); l++)
                             for (int m = 0; m < array.GetLength(4); m++)
-                                array[i, j, k, l, m] = rnd.Next(min, max + 1);
+                            {
+                                array[i, j, k, l, m] = gm == GenerateMode.Integer ?
+                                    rnd.Next(min, max)
+                                    :
+                                    rnd.NextDouble(min, max);
+                            }
             return array;
         }
     }
     public enum SecondDimMode
     {
         List,
-        Box
+        Box,
+        Plain
+    }
+    public enum GenerateMode
+    {
+        Integer,
+        FloatingPoint
     }
 }
