@@ -48,6 +48,7 @@
     <Compile Include="W.cs" />
     <Compile Include="WConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WDictionary.cs" />
     <Compile Include="WRandom.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

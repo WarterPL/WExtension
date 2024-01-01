@@ -2,7 +2,6 @@
 
 namespace W
 {
-    [Serializable]
     public class WRandom
     {
         Random rnd = new Random();

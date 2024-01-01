@@ -5,9 +5,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using W;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace W
 {
@@ -18,11 +15,11 @@ namespace W
 
         public static string ReadLine(string text = "",
             ConsoleColor foreground = ConsoleColor.White,
-            ConsoleColor background = ConsoleColor.Black, bool clearAfterInput = false)
+            ConsoleColor background = ConsoleColor.Black, bool clearColorAfterInput = false)
         {
             colorB = Console.BackgroundColor; colorF = Console.ForegroundColor;
-            WConsole.Write(text, foreground, background);
-            if(!clearAfterInput)
+            Write(text, foreground, background);
+            if(!clearColorAfterInput)
                 unRecolor();
             string input = Console.ReadLine();
             unRecolor();
@@ -62,11 +59,11 @@ namespace W
             unRecolor();
         }
 
-        public static void Write(string text = "", 
+        public static void Write(string text, 
             ConsoleColor foreground = ConsoleColor.White, 
             ConsoleColor background = ConsoleColor.Black) 
         {
-            colorB = Console.BackgroundColor; colorF = Console.ForegroundColor;
+            SetColors();
             Recolor(foreground, background);
             Console.Write(text);
             unRecolor();
@@ -75,7 +72,7 @@ namespace W
         { Console.ForegroundColor = foreground; Console.BackgroundColor = background; }
         private static void unRecolor()
         {  Console.ForegroundColor = colorF; Console.BackgroundColor = colorB; }
-        internal static void SetColors()
+        private static void SetColors()
         {
             colorB = Console.BackgroundColor;
             colorF = Console.ForegroundColor;

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using W;
 using W.Games;
 
@@ -8,9 +10,20 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            double[,] ka = new double[10, 20];
-            ka.Generate(0, 9, GenerateMode.FloatingPoint);
-            ka.Print(SecondDimMode.List);
+            string k = "1";
+            Dictionary<string, string> d = new Dictionary<string, string>();
+            d.Add("Klucz1", k);
+            d.Add("Klucz2", k);
+            d.Add("Klucz3", k);
+            d.Add("Klucz4", k);
+            d.Add("Klucz5", k);
+            d.Add("Klucz6", k);
+            d.Add("Klucz7", k);
+            d.Add("Klucz8", k);
+            d.Add("Klucz9", k);
+            d.Add("Klucz10", k);
+            d.Print();
+
             WConsole.ReadLine();
         }
 
